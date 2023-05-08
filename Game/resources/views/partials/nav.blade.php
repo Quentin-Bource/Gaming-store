@@ -2,11 +2,11 @@
 
     <a class="w-48" href="{{ route('home') }}"><img class="w-full" src="./img/logo.png" alt="Logo"></a>
 <ul class="inline-flex items-center ml-40  text-xl" >
-    <li class="m-10"><a href="{{ route('home') }}">Home</a></li>
-    <li class="m-10"><a href="{{ route('game') }}">Games</a></li>
-    <li class="m-10"><a href="{{ route('about') }}">About</a></li>
-    <li class="m-10 ml-40"><a href="{{ route('sub')}}">Subscribe</a></li>
-    <li class="m-10"><a href="{{ route('login') }}">Login</a></li>
+    <li class="m-10 hover:text-violet-500"><a href="{{ route('home') }}">Home</a></li>
+    <li class="m-10 hover:text-violet-500"><a href="{{ route('game') }}">Games</a></li>
+    <li class="m-10 hover:text-violet-500"><a href="{{ route('about') }}">About</a></li>
+    <li class="m-10 ml-40 hover:text-violet-500"><a href="{{ route('sub')}}">Subscribe</a></li>
+    <li class="m-10 hover:text-violet-500"><a href="{{ route('login') }}">Login</a></li>
 </ul>
 
 </div>
