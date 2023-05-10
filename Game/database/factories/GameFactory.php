@@ -17,8 +17,8 @@ class GameFactory extends Factory
     public function definition(): array
     {
         return [
-            'titre'=>fake()->sentence(),
-            'console'=>fake()->sentence(),
+            'titre'=>fake()->sentence(3),
+            'console'=>fake()->sentence(2),
             'jeu'=>fake()->imageUrl(640, 480, true),
             'prix'=>fake()->numberBetween(20, 100),
             'created_at'=>now()

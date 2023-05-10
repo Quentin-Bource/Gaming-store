@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Game;
 use Illuminate\Http\Request;
 
 class allController extends Controller
@@ -15,7 +16,13 @@ class allController extends Controller
     }
 
     function allGame() {
-        return view('allGame');
+
+        $games = Game::all();
+       
+
+        return view('allGame', [
+            'games' => $games
+        ]);
     }
 
     function about() {
