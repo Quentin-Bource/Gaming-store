@@ -7,15 +7,19 @@ use Illuminate\Http\Request;
 
 class allController extends Controller
 {
-    function home() {
+    public function home() {
         return view('home');
     }
 
-    function game($id) {
-        return view('game');
+    public function game($id) {
+        $game = Game::findOrFail($id);
+        
+        return view('game' , [
+            'game' => $game
+        ]);
     }
 
-    function allGame() {
+    public function allGame() {
 
         $games = Game::all();
        
@@ -25,15 +29,19 @@ class allController extends Controller
         ]);
     }
 
-    function about() {
+    public function about() {
         return view('about');
     }
 
-    function sub() {
+    public function sub() {
         return view('sub');
     }
 
-    function login() {
+    public function login() {
         return view('login');
+    }
+
+    public function create() {
+        return view('create');
     }
 }
