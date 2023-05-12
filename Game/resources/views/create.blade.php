@@ -2,7 +2,10 @@
 
 @section('content')
 
+<form action="POST">
 
+    
+</form>
 
 
     
