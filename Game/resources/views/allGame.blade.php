@@ -3,6 +3,7 @@
 @section('content')
 
 <div class="grid gap-10 grid-cols-4 m-5">
+    
     @if ($games->count() > 0)
     @foreach ($games as $game)
     <div class=" text-center"> 

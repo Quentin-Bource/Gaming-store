@@ -2,19 +2,17 @@
 
 namespace App\Models;
 
-use App\Models\Tag;
+use App\Models\Game;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Game extends Model
+class Tag extends Model
 {
     use HasFactory;
 
-    protected $table = 'games';
-
-    public function tags()
+    public function games()
     {
-        return $this->belongsToMany(Tag::class);
+        return $this->belongsToMany(Game::class);
     }
 }

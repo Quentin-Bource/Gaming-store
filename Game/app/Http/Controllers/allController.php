@@ -7,41 +7,55 @@ use Illuminate\Http\Request;
 
 class allController extends Controller
 {
-    public function home() {
+    public function home()
+    {
         return view('home');
     }
 
-    public function game($id) {
+    public function game($id)
+    {
         $game = Game::findOrFail($id);
-        
-        return view('game' , [
+
+        return view('game', [
             'game' => $game
         ]);
     }
 
-    public function allGame() {
+    public function allGame()
+    {
 
         $games = Game::all();
-       
+
 
         return view('allGame', [
             'games' => $games
         ]);
     }
 
-    public function about() {
+    public function about()
+    {
         return view('about');
     }
 
-    public function sub() {
+    public function sub()
+    {
         return view('sub');
     }
 
-    public function login() {
+    public function login()
+    {
         return view('login');
     }
 
-    public function create() {
+    public function create(Request $request)
+    {
+        // Game::create([
+        //     'title' =>
+        //     'console' => 
+        //     'content' =>
+        //     ''
+        // ])
+
         return view('create');
     }
 }
