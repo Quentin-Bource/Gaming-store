@@ -14,6 +14,8 @@ class Game extends Model
 
     protected $table = 'games';
 
+    protected $fillable = ['titre', 'content', 'prix'];
+
     public function tags()
     {
         return $this->belongsToMany(Tag::class);

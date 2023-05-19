@@ -47,15 +47,19 @@ class allController extends Controller
         return view('login');
     }
 
-    public function create(Request $request)
+    public function create()
     {
-        // Game::create([
-        //     'title' =>
-        //     'console' => 
-        //     'content' =>
-        //     ''
-        // ])
 
         return view('create');
+    }
+
+    public function post(Request $request)
+    {
+        Game::create([
+            'titre' => $request->titre,
+            'content' => $request->content,
+            'prix' => $request->prix
+        ]);
+        dd('Post crée');
     }
 }
