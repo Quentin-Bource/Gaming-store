@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Console extends Model
 {
     use HasFactory;
+    protected $table = 'consoles';
+
+    protected $fillable = ['console'];
+
+    public function games()
+    {
+        return $this->belongsToMany(Game::class);
+    }
 }

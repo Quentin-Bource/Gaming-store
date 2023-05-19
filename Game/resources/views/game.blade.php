@@ -5,7 +5,7 @@
 <div class="">
 
     <h3 class=""> {{$game->titre}} </h3>
-<img class=""  src="{{$game->jeu}}" alt="Jeu">
+<img src=" /Gaming-store/Game/public/{{ Storage::url($game->image->path)}}" alt="Jeux">
 <span class=""> {{$game->console}} </span>
 <span class=""> {{$game->prix}}$</span>
 <p>{{$game->content}}</p> 
