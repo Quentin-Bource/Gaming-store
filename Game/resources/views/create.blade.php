@@ -18,7 +18,7 @@
 
     @foreach ($tags as $tag)
 
-    <input type="checkbox" id="{{$tag->name}}" name="{{$tag->name}}" value="{{$tag->name}}">
+    <input type="checkbox" id="{{$tag->name}}" name="tags[]" value="{{$tag->id}}">
     <label for="{{$tag->name}}">{{$tag->name}}</label><br>
         
     @endforeach
@@ -27,7 +27,7 @@
 
     @foreach ($consoles as $console)
 
-    <input type="checkbox" id="{{$console->console}}" name="{{$console->console}}" value="{{$console->console}}">
+    <input type="checkbox" id="{{$console->console}}" name="consoles[]" value="{{$console->id}}">
     <label for="{{$console->console}}">{{$console->console}}</label><br>
         
     @endforeach

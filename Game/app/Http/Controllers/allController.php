@@ -57,8 +57,8 @@ class allController extends Controller
         $tags = Tag::all();
         $consoles = Console::all();
 
-        return view('create' ,[
-            'tags' => $tags ,
+        return view('create', [
+            'tags' => $tags,
             'consoles' => $consoles
         ]);
     }
@@ -66,8 +66,8 @@ class allController extends Controller
     public function post(Request $request)
     {
 
-        
-        
+
+
         $game = Game::create([
             'titre' => $request->titre,
             'content' => $request->content,
@@ -75,30 +75,41 @@ class allController extends Controller
         ]);
 
         $path = Storage::disk('public')->put('GamesImg', $request->game);
-        $image = New Image();
+        $image = new Image();
         $image->path = $path;
 
         $game->image()->save($image);
 
-       
+
+        $tags = $request->input('tags', []);
+        $consoles = $request->input('consoles', []);
+
+        $game->tags()->sync($tags);
+        $game->consoles()->sync($consoles);
+
+        return redirect()->back()->with('success', 'Le jeu a été créé avec succès.');
 
         // dd('Post crée');
     }
 
-    public function postTag(Request $request) {
+    public function postTag(Request $request)
+    {
 
-        $tag = Tag::create([
-            'name'=> $request->name
+        Tag::create([
+            'name' => $request->name
         ]);
+        return redirect()->back()->with('success', 'Le Tag a été créé avec succès.');
 
         // dd('Post crée');
     }
 
-    public function postConsole(Request $request) {
+    public function postConsole(Request $request)
+    {
 
-        $tag = Console::create([
-            'console'=> $request->console
+        Console::create([
+            'console' => $request->console
         ]);
+        return redirect()->back()->with('success', 'La console a été créée avec succès.');
 
         // dd('Post crée');
     }
