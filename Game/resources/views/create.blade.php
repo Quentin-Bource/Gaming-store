@@ -4,7 +4,7 @@
 
 <div class="flex justify-center ">
 
-    <form method="POST" action="{{ route('game.post') }}" enctype="multipart/form-data" class="w-2/5 bg-zinc-600 m-10 p-10 rounded text-white">
+    <form method="POST" action="{{ route('game.post') }}" enctype="multipart/form-data" class="w-3/5 bg-zinc-600 m-10 p-10 rounded text-white">
       @csrf
   
       <div class="flex flex-col items-center">
