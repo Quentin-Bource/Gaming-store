@@ -7,7 +7,7 @@
     @vite('resources/css/app.css')
     <title>Old Game Store</title>
 </head>
-<body class="bg-cover" style="background-image: url('{{ asset('img/bg.jpg') }}')">
+<body class="bg-cover font-mono" style="background-image: url('{{ asset('img/bg.jpg') }}')">
 
     <div class=" bg-stone-50 opacity-80 m-12 rounded-md">
         @include('partials.nav')
