@@ -30,27 +30,28 @@
     <div>
         <h4 class="m-8 text-xl">Choisi la console :</h4>
 
-        <form action="" method="GET">
+        <form action="{{ route('cart.add') }}" method="POST">
 
-            @foreach ($game->consoles as $console)
+          @csrf
+        
+          @foreach ($game->consoles as $console)
 
-          
             <label class="inline-flex items-center mt-5 mr-5 p-2 text-xl rounded-md bg-zinc-800 hover:bg-violet-500">
-              <input type="radio" name="console" class="form-radio h-5 w-5 text-violet-500">
-              {{$console->console}}
+
+              <input type="radio" name="console_id" value="{{ $console->id }}" class="form-radio h-5 w-5 text-violet-500">
+
+              {{ $console->console }}
+
             </label>
+          @endforeach
         
-                
-            @endforeach
+          <div class="flex justify-end">
 
-
-            <div class="flex justify-end">
-        
-                <button type="submit" class="flex mr-5 p-2 rounded-md text-3xl hover:bg-violet-500 bg-zinc-800 ml-5 mt-5 mb-5 items-end"> {{$game->prix}}$ ></button>
-        
-                </div>
-
-
+            <input type="hidden" name="game_id" value="{{ $game->id }}">
+            
+            <button type="submit" class="flex mr-5 p-2 rounded-md text-3xl hover:bg-violet-500 bg-zinc-800 ml-5 mt-5 mb-5 items-end"> {{ $game->prix }}$ ></button>
+          
+          </div>
         </form>
 
     

@@ -6,6 +6,7 @@ use App\Models\Game;
 use App\Models\Image;
 use App\Models\Tag;
 use App\Models\Console;
+use App\Models\Cart;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -17,10 +18,42 @@ class allController extends Controller
         return view('home');
     }
 
-    public function panier()
+    public function addPanier(Request $request)
     {
-        return view('panier');
+        $game = Game::findOrFail($request->game_id);
+        $console = Console::findOrFail($request->console_id);
+
+        
+        $cartItem = new Cart();
+        $cartItem->game_id = $game->id;
+        $cartItem->console_id = $console->id;
+        
+
+      
+        $cartItem->save();
+
+     
+        return redirect()->back()->with('success', 'Le jeu a été ajouté au panier.');
     }
+
+
+    public function panier()
+    {   
+        $cart = Cart::all();
+        
+        return view('panier',[
+            'cart'=> $cart,
+        ]
+    );
+    }
+
+    public function removePanier($id)
+{
+    $cart = Cart::findOrFail($id);
+    $cart->delete();
+
+    return redirect()->route('panier')->with('success', 'L\'élément a été supprimé du panier.');
+}
 
     public function game($id)
     {
