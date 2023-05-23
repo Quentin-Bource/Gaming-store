@@ -1,16 +1,40 @@
-<div class="bg-slate-800 w-full  opacity-100 text-slate-50 inline-flex rounded-t-md">
+<div class="bg-slate-800 w-full opacity-100 text-slate-50 flex rounded-t-md">
 
-    <a class="" href="{{ route('game.create') }}"><img class=" w-48 mr-10" src="./img/logo.png" alt=""></a>
-<ul class="inline-flex items-center ml-30  text-xl" >
-    <li class="m-10 hover:text-violet-500"><a href="{{ route('home') }}">Home</a></li>
-    <li class="m-10 hover:text-violet-500"><a href="{{ route('games') }}">Games</a></li>
-    <li class="m-10 hover:text-violet-500"><a href="{{ route('about') }}">About</a></li>
-    <li class="m-10 ml-40 hover:text-violet-500"><a href="{{ route('sub')}}">Subscribe</a></li>
-    <li class="m-10 hover:text-violet-500"><a href="{{ route('login') }}">Login</a></li>
-</ul>
+    <a class="flex justify-start" href="{{ route('game.create') }}">
 
-</div>
+      <img class="w-48" src="{{asset('img/logo.png')}}" alt="">
 
+    </a>
+
+    <div class="flex justify-around w-full">
+
+      <ul class="inline-flex text-center items-center text-2xl transition-colors duration-300">
+
+        <li class="m-10 mr-20 hover:text-violet-500 @if(Request::is('/')) text-violet-500 @endif">
+
+          <a href="{{ route('home') }}">Home</a>
+
+        </li>
+
+        <li class="m-10 mr-20 hover:text-violet-500 @if(Request::is('Game*')) text-violet-500 @endif">
+
+          <a href="{{ route('games') }}">Games</a>
+
+        </li>
+
+        <li class="m-10 mr-20 hover:text-violet-500 @if(Request::is('About')) text-violet-500 @endif">
+
+          <a href="{{ route('about') }}">About</a>
+
+        </li>
+
+      </ul>
+
+      <a class="w-10 flex justify-center items-center" href="{{ route('panier') }}"> <img src="{{asset('img/panier.png')}}" alt="panier"></a>
+
+    </div>
+  </div>
+  
 
 
 

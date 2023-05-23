@@ -20,6 +20,6 @@ Route::post('/Game/Create/Tag', 'App\Http\Controllers\allController@postTag')->n
 Route::post('/Game/Create/Console', 'App\Http\Controllers\allController@postConsole')->name('game.postConsole');
 Route::get('/Game/{id}', 'App\Http\Controllers\allController@game')->name('game');
 Route::get('/Game', 'App\Http\Controllers\allController@allGame')->name('games');
-Route::get('/Sub', 'App\Http\Controllers\allController@sub')->name('sub');
-Route::get('/Login', 'App\Http\Controllers\allController@login')->name('login');
 Route::get('/About', 'App\Http\Controllers\allController@about')->name('about');
+Route::get('/Panier', 'App\Http\Controllers\allController@panier')->name('panier');
+

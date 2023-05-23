@@ -17,6 +17,11 @@ class allController extends Controller
         return view('home');
     }
 
+    public function panier()
+    {
+        return view('panier');
+    }
+
     public function game($id)
     {
         $game = Game::findOrFail($id);

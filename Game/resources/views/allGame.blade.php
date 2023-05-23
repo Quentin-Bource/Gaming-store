@@ -22,31 +22,31 @@
 
             @foreach ($game->consoles->take(2) as $console)
 
-            <span class=" mr-5 p-2 text-xl rounded-md  bg-zinc-800 items-start">{{$console->console}}</span>
+            <span class=" mr-5 p-2 text-m rounded-md  bg-zinc-800 items-start">{{$console->console}}</span>
 
              @endforeach
 
-            <span class=" mr-5 p-2 text-lg rounded-md  bg-zinc-800">...</span>
+            <span class=" mr-5 p-2 text-m rounded-md  bg-zinc-800">...</span>
             
         @else
         @foreach ($game->consoles as $console)
 
-        <span class="mr-5 p-2 text-xl rounded-md  bg-zinc-800"> {{$console->console}} </span>
+        <span class="mr-5 p-2 text-m rounded-md  bg-zinc-800"> {{$console->console}} </span>
             
         @endforeach
         
         @endif
 
-        </div>
+        
 
         <div class="flex justify-end">
         
-        <span class="flex mr-5 p-2 rounded-md text-3xl hover:bg-violet-500 bg-zinc-800 ml-5 items-end"> {{$game->prix}}$ ></span>
+        <span class="flex mr-5 p-2 rounded-md text-xl hover:bg-violet-500 bg-zinc-800 ml-5 items-end"> {{$game->prix}}$ ></span>
 
     
 
 
-
+    </div>
         </div>
 
 
