@@ -30,7 +30,14 @@
 
       </ul>
 
-      <a class="w-10 flex justify-center items-center" href="{{ route('panier') }}"> <img src="{{asset('img/panier.png')}}" alt="panier"></a>
+      <a class="w-10 flex justify-center items-center" href="{{ route('panier') }}"> 
+        @if ($cart->count() > 0)
+        <span class="text-xs bg-violet-500 p-1 rounded-full ">{{$cart->count()}}</span> 
+      
+      @endif
+
+      <img src="{{asset('img/panier.png')}}" alt="panier"> 
+      </a>
 
     </div>
   </div>

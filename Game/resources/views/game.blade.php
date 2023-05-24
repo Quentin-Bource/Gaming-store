@@ -38,7 +38,7 @@
 
             <label class="inline-flex items-center mt-5 mr-5 p-2 text-xl rounded-md bg-zinc-800 hover:bg-violet-500">
 
-              <input type="radio" name="console_id" value="{{ $console->id }}" class="form-radio h-5 w-5 text-violet-500">
+              <input type="radio" name="console_id" value="{{ $console->id }}" class="form-radio h-5 w-5 text-violet-500" required>
 
               {{ $console->console }}
 
@@ -68,6 +68,22 @@
     <p class="rounded-md col-span-2 p-5 text-white bg-zinc-600 text-xl">{{$game->content}}</p>
     
   </div>
+
+
+  
+
+  <form action="{{ route('game.remove', ['id' => $game->id])}}" method="POST">
+    @csrf
+    @method('DELETE')
+
+    <button type="submit" class="rounded-xl bg-zinc-600 hover:bg-violet-500 text-white p-2 m-5">Supprimer</button>
+  </form>
+
+  <a class="rounded-xl bg-zinc-600 hover:bg-violet-500 text-white p-2 m-5" href="{{ route('edit', ['id' => $game->id])}}">Modifier</a>
+
+  
+
+
 
   
 

@@ -53,7 +53,7 @@
 
                 <input type="checkbox" id="{{$console->console}}" name="consoles[]" value="{{$console->id}} ">
                 <label for="{{$console->console}}">{{$console->console}}</label>
-
+                
               </div>
 
               @endforeach
@@ -95,5 +95,73 @@
     </form>
 
   </div>
+
+  <div class="grid grid-cols-2">
+
+    <div class="ml-8 flex justify-start w-3/5 bg-zinc-600 text-white rounded-lg">
+
+      <h3 class="m-8 ">Retirer un Tag :</h3>
+
+      <div class="grid grid-cols-2 w-2/5 rounded-xl m-5">
     
+        @foreach ($tags as $tag)
+    
+        <span class="m-1 p-1"> {{$tag->name}} </span>
+            
+       
+      
+      
+        <form action="{{ route('game.removeTag', ['id' => $tag->id]) }}" method="POST">
+          @csrf
+          @method('DELETE')
+          <button class="border-2 border-white m-1 p-1 hover:bg-zinc-800 w-8 h-8 rounded-full" type="submit" class="btn-remove">X</button>
+      </form>
+      
+      @endforeach
+          
+
+
+    </div>
+
+
+
+
+  </div>
+
+    <div class="flex justify-end bg-zinc-600 m-5 text-white w-2/3 rounded-lg">
+
+      <h3 class="m-8 ">Retirer une Console :</h3>
+
+      <div class="grid grid-cols-2 w-2/5 rounded-xl m-5">
+    
+        @foreach ($consoles as $console)
+        
+    
+        <span class="m-1 p-1"> {{$console->console}} </span>
+            
+       
+      
+      
+        <form  action="{{ route('game.removeConsole', ['id' => $console->id]) }}" method="POST">
+          @csrf
+          @method('DELETE')
+          <button class="border-2 border-white m-1 p-1 hover:bg-zinc-800 w-8 h-8 rounded-full"  type="submit" class="btn-remove">X</button>
+      </form>
+      
+      @endforeach
+          
+    
+    
+      </div>
+
+
+    </div>
+
+
+
+    
+  </div>
+
+
+
 @endsection
