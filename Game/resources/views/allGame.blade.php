@@ -6,7 +6,7 @@
     
     @if ($games->count() > 0)
     @foreach ($games as $game)
-    <a class="bg-zinc-600 text-white  mt-10 mb-10 rounded h-80 " href="{{route('game' , ['id' => $game->id])}}">
+    <a class="bg-zinc-600 text-white  mt-10 mb-10 rounded h-80 " data-aos="fade-up" data-aos-duration="1000" href="{{route('game' , ['id' => $game->id])}}">
     <div class="text-center"> 
         
     
@@ -67,4 +67,8 @@
 
 </div>
     
+@endsection
+
+@section('scripts')
+  <script src="{{ asset('js/app.js') }}"></script>
 @endsection
