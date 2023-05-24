@@ -6,11 +6,11 @@
 
     <div class="flex justify-center items-center ">
 
-      <img class=" h-96 " src="/Gaming-store/Game/public/{{ Storage::url($game->image->path)}}" alt="Jeux">
+      <img class=" h-96 " src="/Gaming-store/Game/public/{{ Storage::url($game->image->path)}}" alt="Jeux" data-aos="fade-down">
 
     </div>
 
-    <div class="bg-zinc-600 rounded-md">
+    <div class="bg-zinc-600 rounded-md" data-aos="fade-left">
       <h3 class="text-4xl text-center m-10">{{$game->titre}}</h3>
 
       
@@ -18,11 +18,11 @@
 
         @forelse ($game->tags as $tag)
 
-        <span class="bg-zinc-800 p-2 rounded-md mr-5">{{$tag->name}}</span>
+        <span class="bg-zinc-800 p-2 rounded-md mr-5" data-aos="fade-left">{{$tag->name}}</span>
         
       @empty
 
-    <span>Aucun tags pour ce jeu</span>
+    <span data-aos="fade-left">Aucun tags pour ce jeu</span>
     
     
     @endforelse
@@ -38,7 +38,7 @@
 
             <label class="inline-flex items-center mt-5 mr-5 p-2 text-xl rounded-md bg-zinc-800 hover:bg-violet-500">
 
-              <input type="radio" name="console_id" value="{{ $console->id }}" class="form-radio h-5 w-5 text-violet-500" required>
+              <input type="radio" name="console_id" value="{{ $console->id }}" class="form-radio h-5 w-5 text-violet-500" required >
 
               {{ $console->console }}
 
@@ -49,7 +49,7 @@
 
             <input type="hidden" name="game_id" value="{{ $game->id }}">
             
-            <button type="submit" class="flex mr-5 p-2 rounded-md text-3xl hover:bg-violet-500 bg-zinc-800 ml-5 mt-5 mb-5 items-end"> {{ $game->prix }}$ ></button>
+            <button type="submit" class="flex mr-5 p-2 rounded-md text-3xl hover:bg-violet-500 bg-zinc-800 ml-5 mt-5 mb-5 items-end" data-aos="fade-right"> {{ $game->prix }}$ ></button>
           
           </div>
         </form>
@@ -65,7 +65,7 @@
     </div>
 
 
-    <p class="rounded-md col-span-2 p-5 text-white bg-zinc-600 text-xl">{{$game->content}}</p>
+    <p class="rounded-md col-span-2 p-5 text-white bg-zinc-600 text-xl" data-aos="fade-up">{{$game->content}}</p>
     
   </div>
 

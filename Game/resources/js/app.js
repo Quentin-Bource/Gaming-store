@@ -1,7 +1,5 @@
 import './bootstrap';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import Glide from '@glidejs/glide';
 
-document.addEventListener('DOMContentLoaded', function() {
-    AOS.init();
-  });
+new Glide('.glide').mount();
+

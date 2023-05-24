@@ -12,7 +12,7 @@
 
         @foreach($cart as $cartItem)
 
-        <div class="flex bg-zinc-600 w-4/6 ml-40 mt-8 mb-8 text-white rounded-lg">
+        <div class="flex bg-zinc-600 w-4/6 ml-40 mt-8 mb-8 text-white rounded-lg" >
             <img class="w-48 mt-5 mb-5 ml-5 rounded" src="/Gaming-store/Game/public/{{ Storage::url($cartItem->game->image->path)}}" alt="Jeux">
 
             <div class="text-center w-full">
@@ -45,7 +45,7 @@
 
 @else
 
-    <p>Votre panier est vide.</p>
+    <p class="text-center m-11 text-lg">Votre panier est vide.</p>
 @endif
 
 

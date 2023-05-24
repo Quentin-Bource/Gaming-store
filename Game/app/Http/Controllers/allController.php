@@ -16,10 +16,12 @@ class allController extends Controller
     public function home()
     {
         $cart = Cart::all();
+        $games = Game::all();
         return view(
             'home',
             [
                 'cart' => $cart,
+                'games' => $games
             ]
         );
     }
