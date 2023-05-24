@@ -1,5 +1,6 @@
 import './bootstrap';
-import Glide from '@glidejs/glide';
+import { Splide } from '@splidejs/splide';
 
-new Glide('.glide').mount();
+
+
 

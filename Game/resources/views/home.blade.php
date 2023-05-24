@@ -6,16 +6,19 @@
     <img class="w-1/4" src="{{ asset('img/titre.png')}}" alt="">
   </h1>
 
-  <div class="glide">
-    <div class="glide__track" data-glide-el="track">
-      <ul class="glide__slides">
+
+  
+  <div id="splide" class="splide">
+    <div class="splide__track">
+      <ul class="splide__list">
         @foreach($games as $game)
-          <li class="glide__slide">
-            <img class="mx-auto justify-center h-36 w-40" src="/Gaming-store/Game/public/{{ Storage::url($game->image->path) }}" alt="Jeu">
+          <li class="splide__slide">
+            
+            <img class="mx-auto justify-center h-36 "  src="/Gaming-store/Game/public/{{ Storage::url($game->image->path)}}" alt="Jeu" style="visibility: visible">
           </li>
         @endforeach
       </ul>
     </div>
   </div>
-    
+
 @endsection

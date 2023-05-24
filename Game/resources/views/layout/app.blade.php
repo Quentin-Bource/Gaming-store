@@ -6,8 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite('resources/css/app.css')
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css">
-    <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.theme.min.css">
     <title>Old Game Store</title>
 </head>
 <body class="bg-cover font-mono" style="background-image: url('{{ asset('img/bg.jpg') }}')">
@@ -25,5 +23,17 @@
 <script>
   AOS.init();
 </script>
+<script>
+  new Splide('.splide', {
+    type: 'loop',
+    perPage: 3,
+    perMove: 1,
+    arrows: true,
+    autoplay: true,
+    interval: 500, 
+  }).mount();
+
+  </script>
+  
 
 </html>
